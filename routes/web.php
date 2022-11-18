@@ -10,7 +10,8 @@ use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
 Route::get('/', function () {
-    return redirect('/admin');
+    return view('web.home');
+    //return redirect('/admin');
 });
 
 Auth::routes();

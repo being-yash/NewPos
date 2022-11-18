@@ -6,6 +6,7 @@ use App\Http\Requests\ProductStoreRequest;
 use App\Http\Requests\ProductUpdateRequest;
 use App\Http\Resources\ProductResource;
 use App\Models\Product;
+use App\Models\Vendor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -36,6 +37,7 @@ class ProductController extends Controller
      */
     public function create()
     {
+        $vendors = Vendor::all();
         return view('products.create');
     }
 
@@ -59,6 +61,10 @@ class ProductController extends Controller
             'image' => $image_path,
             'barcode' => $request->barcode,
             'price' => $request->price,
+            'wholesale_price' => $request->wholesale_price,
+            'resale_price' => $request->resale_price,
+            'purchase_price' => $request->purchase_price,
+            'vendor' => $request->vendor,
             'quantity' => $request->quantity,
             'status' => $request->status
         ]);

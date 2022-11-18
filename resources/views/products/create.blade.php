@@ -37,7 +37,7 @@
             <div class="form-group">
                 <label for="image">Image</label>
                 <div class="custom-file">
-                    <input type="file" class="custom-file-input" name="image" id="image">
+                    <input type="file" class="custom-file-input" name="images[]" id="image" multiple>
                     <label class="custom-file-label" for="image">Choose file</label>
                 </div>
                 @error('image')
@@ -48,10 +48,21 @@
             </div>
 
             <div class="form-group">
-                <label for="barcode">Barcode</label>
+                <label for="barcode">Barcode / SKU</label>
                 <input type="text" name="barcode" class="form-control @error('barcode') is-invalid @enderror"
-                    id="barcode" placeholder="barcode" value="{{ old('barcode') }}">
+                    id="barcode" placeholder="barcode / sku" value="{{ old('barcode') }}">
                 @error('barcode')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+            </div>
+
+            <div class="form-group">
+                <label for="purchase_price">Purchase Price</label>
+                <input type="text" name="purchase_price" class="form-control @error('purchase_price') is-invalid @enderror" id="purchase_price"
+                    placeholder="Purchase Price" value="{{ old('purchase_price') }}">
+                @error('purchase_price')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                 </span>
@@ -61,13 +72,47 @@
             <div class="form-group">
                 <label for="price">Price</label>
                 <input type="text" name="price" class="form-control @error('price') is-invalid @enderror" id="price"
-                    placeholder="price" value="{{ old('price') }}">
+                    placeholder="Price" value="{{ old('price') }}">
                 @error('price')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                 </span>
                 @enderror
             </div>
+
+            <div class="form-group">
+                <label for="resale_price">Resale Price</label>
+                <input type="text" name="resale_price" class="form-control @error('resale_price') is-invalid @enderror" id="resale_price"
+                    placeholder="Resale Price" value="{{ old('resale_price') }}">
+                @error('resale_price')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+            </div>
+
+            <div class="form-group">
+                <label for="wholesale_price">Wholesale Price</label>
+                <input type="text" name="wholesale_price" class="form-control @error('wholesale_price') is-invalid @enderror" id="wholesale_price"
+                    placeholder="Wholesale Price" value="{{ old('wholesale_price') }}">
+                @error('wholesale_price')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+            </div>
+
+            <div class="form-group">
+                <label for="vendor">Vendor</label>
+                <input type="text" name="vendor" class="form-control @error('vendor') is-invalid @enderror"
+                    id="vendor" placeholder="Vendor" value="{{ old('vendor') }}">
+                @error('vendor')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+            </div>
+
 
             <div class="form-group">
                 <label for="quantity">Quantity</label>

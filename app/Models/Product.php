@@ -11,7 +11,11 @@ class Product extends Model
         'description',
         'image',
         'barcode',
+        'resale_price',
+        'wholesale_price',
+        'purchase_price',
         'price',
+        'vendor',
         'quantity',
         'status'
     ];
