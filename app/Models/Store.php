@@ -5,10 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Vendor extends Model
+class Store extends Model
 {
     use HasFactory;
-    protected $table = 'vendors';
+    use SoftDeletes;
+    
+    protected $table = 'stores';
     
     /**
      * The attributes that are mass assignable.
@@ -16,6 +18,6 @@ class Vendor extends Model
      * @var array
      */
     protected $fillable = [
-        'name','details',
+        'name',
     ];
 }

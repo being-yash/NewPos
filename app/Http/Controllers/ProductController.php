@@ -7,6 +7,7 @@ use App\Http\Requests\ProductUpdateRequest;
 use App\Http\Resources\ProductResource;
 use App\Models\Product;
 use App\Models\Vendor;
+use App\Models\Store;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -38,7 +39,8 @@ class ProductController extends Controller
     public function create()
     {
         $vendors = Vendor::all();
-        return view('products.create');
+        $stores = Store::all();
+        return view('products.create',compact('vendors','stores'));
     }
 
     /**

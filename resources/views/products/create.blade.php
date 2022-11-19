@@ -104,9 +104,30 @@
 
             <div class="form-group">
                 <label for="vendor">Vendor</label>
-                <input type="text" name="vendor" class="form-control @error('vendor') is-invalid @enderror"
-                    id="vendor" placeholder="Vendor" value="{{ old('vendor') }}">
+                <select name="vendor" class="form-control @error('vendor') is-invalid @enderror"
+                    id="vendor" required>
+                    <option value="">Please Select Vendor</option>
+                    @foreach($vendors as $vendor)
+                        <option value="{{ $vendor->id }}">{{ $vendor->name }}</option>
+                    @endforeach
+                </select>
                 @error('vendor')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $message }}</strong>
+                </span>
+                @enderror
+            </div>
+
+            <div class="form-group">
+                <label for="store">Store</label>
+                <select name="store" class="form-control @error('store') is-invalid @enderror"
+                    id="store" required>
+                    <option value="">Please Select Store</option>
+                    @foreach($stores as $store)
+                        <option value="{{ $store->id }}">{{ $store->name }}</option>
+                    @endforeach
+                </select>
+                @error('store')
                 <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
                 </span>

@@ -47,6 +47,18 @@
                     </a>
                 </li>
                 <li class="nav-item has-treeview">
+                    <a href="{{ route('vendors.index') }}" class="nav-link {{ activeSegment('vendors') }}">
+                        <i class="nav-icon fas fa-cart-plus"></i>
+                        <p>Vendors</p>
+                    </a>
+                </li>
+                <li class="nav-item has-treeview">
+                    <a href="{{ route('stores.index') }}" class="nav-link {{ activeSegment('stores') }}">
+                        <i class="nav-icon fas fa-cart-plus"></i>
+                        <p>Stores</p>
+                    </a>
+                </li>
+                <li class="nav-item has-treeview">
                     <a href="{{ route('customers.index') }}" class="nav-link {{ activeSegment('customers') }}">
                         <i class="nav-icon fas fa-users"></i>
                         <p>Customers</p>

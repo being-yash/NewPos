@@ -30,6 +30,8 @@
 
         @include('layouts.partials.navbar')
         @include('layouts.partials.sidebar')
+        @include('notification')
+
         <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
